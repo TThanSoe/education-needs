@@ -60,6 +60,26 @@ body {
   font-size: 40px;
   z-index: 1;
 }
+.navbar-toggle:after,
+.navbar-toggle:before,
+.navbar-toggle span {
+  background: #fff;
+  border-radius: 3px;
+  content: "";
+  display: block;
+  height: 5px;
+  margin: 7px 0;
+  transition: all 0.2s ease-in-out;
+}
+.navbar-toggle:before {
+  transform: translateY(12px) rotate(135deg);
+}
+.navbar-toggle:after {
+  transform: translateY(12px) rotate(-135deg);
+}
+.navbar-toggle span {
+  transform: scale(0);
+}
 
 .active {
   display: block;
@@ -145,6 +165,8 @@ input {
 
 .main-container {
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .image-main {
@@ -177,6 +199,30 @@ input {
   padding: 0 10px;
   font-size: 18px;
 }
+.card-container {
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+  grid-gap: 30px;
+  position: relative;
+  bottom: 170px;
+  width: 100%;
+}
+.card {
+  width: 100%;
+  /* height: 250px; */
+  border-radius: 25px;
+  background: #ffdd59;
+}
+
+.card-content {
+  text-align: left;
+  margin: 40px;
+}
+.card-image {
+  max-height: 300px;
+  width: 100%;
+  border-radius: 20px;
+}
 .footer {
   background: #1d1d1b;
   color: #fefefe;
@@ -187,7 +233,6 @@ input {
 .grid-container {
   padding-left: 1rem;
   padding-right: 1rem;
-  width: 100%;
 }
 .grid-x {
   display: flex;
