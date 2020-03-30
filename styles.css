@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   padding: 0;
@@ -115,7 +118,6 @@ body {
   display: flex;
   justify-content: flex-end;
   margin-right: 70px;
-  margin-top: -40px;
 }
 
 input {
@@ -164,7 +166,6 @@ input {
 .text-mobile {
   height: 40px;
   margin-top: -30px;
-  /* margin-left: 276px; */
   margin-left: 90%;
 }
 
@@ -176,6 +177,9 @@ input {
 
 .image-main {
   width: 100%;
+}
+#myVideo {
+  display: none;
 }
 
 .main-content {
@@ -210,7 +214,6 @@ input {
 }
 .card {
   width: 100%;
-  /* height: 250px; */
   border-radius: 25px;
   background: #ffdd59;
 }
@@ -239,39 +242,128 @@ input {
   font-weight: 500;
   font-size: 20px;
 }
-.btn-signup {
+.btn-signup,
+.btn-send {
   height: 70px;
   width: 250px;
   border: 2px solid #1d1d1b;
   background: #ffdd59;
   padding: 10px 20px;
-  /* padding-bottom: 20px; */
   position: relative;
   bottom: 30px;
   border-radius: 30px;
   font-size: 18px;
   font-weight: 500;
   text-transform: uppercase;
+  cursor: pointer;
 }
 .mail-img {
   position: relative;
   bottom: 30px;
   animation: bounceInUp 4s backwards;
 }
+input[type="name"],
+input[type="email"] {
+  width: 100%;
+  height: 50px;
+  padding: 12px 20px;
+  margin: 20px 0;
+  display: inline-block;
+  border: 1px solid #1d1d1b;
+  box-sizing: border-box;
+}
+.btn-send {
+  width: 170px;
+  bottom: 0;
+  margin-top: 50px;
+}
+.btn-send:hover {
+  opacity: 1;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 80%;
+  height: 100%;
+  overflow: auto;
+  background: #f7f1e3;
+  padding-top: 60px;
+}
+.modal form {
+  display: block;
+}
+.close {
+  position: relative;
+  top: 2px;
+}
+.close i {
+  font-size: 22px;
+}
+.modal h3 {
+  font-size: 20px;
+}
+.modal-container {
+  margin-top: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.modal-container label {
+  font-size: 18px;
+}
+.modal-close {
+  background: #ffdd59;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  position: relative;
+  bottom: 4.5rem;
+  left: 12rem;
+  border: 2 solid #1d1d1b;
+}
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s;
+}
+
+@-webkit-keyframes animatezoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes animatezoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
 @keyframes bounceInUp {
   0% {
     opacity: 0;
     transform: translateY(300px);
+    bottom: 0px;
   }
   60% {
     opacity: 1;
     transform: translateY(-30px);
+    bottom: 15px;
   }
   80% {
     transform: translateY(10px);
+    bottom: 30px;
   }
   100% {
     transform: translateY(0);
+    bottom: 45px;
   }
 }
 
@@ -335,16 +427,17 @@ li::first-letter {
     width: 200px;
   }
   .logo-mobile {
+    position: relative;
+    bottom: 15px;
+  }
+  /* .logo-desktop {
     display: none;
-  }
-  .logo-desktop {
-    display: block;
-  }
+  } */
   .main-nav {
     width: 60%;
     display: flex;
     position: relative;
-    bottom: 210px;
+    bottom: 190px;
     left: 250px;
   }
   .navbar-toggle {
@@ -361,7 +454,7 @@ li::first-letter {
   }
   .btn-donate {
     position: relative;
-    bottom: 260px;
+    bottom: 271px;
     margin-bottom: -160px;
   }
   .button-donate {
@@ -381,9 +474,109 @@ li::first-letter {
     width: 200px;
   }
   .text-donate {
-    height: 14vh;
+    height: 60px;
   }
   .text-p {
     margin-right: 100px;
+  }
+  .image-main {
+    display: none;
+  }
+  #myVideo {
+    display: block;
+    position: relative;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+  .main-content {
+    width: 30rem;
+    height: 11rem;
+    left: 60px;
+    bottom: 30rem;
+  }
+  .subtitle-main {
+    font-size: 28px;
+    text-align: center;
+  }
+  .text-main {
+    font-size: 22px;
+    padding-left: 50px;
+  }
+  .card-container {
+    margin-top: 4.5rem;
+    margin-bottom: 4.5rem;
+    display: flex;
+    flex-direction: row;
+  }
+  .card {
+    margin: 20px;
+  }
+  .card-image {
+    max-height: 411px;
+  }
+
+  .card-content {
+    font-size: 20px;
+  }
+  .mail-img {
+    width: 250px;
+  }
+  .stay-in-touch {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    position: relative;
+  }
+  .mail-img {
+    right: 17rem;
+    bottom: 15px;
+  }
+  .stay-in-touch-message {
+    font-size: 20px;
+    position: absolute;
+    right: 17rem;
+    bottom: 14rem;
+  }
+  .btn-signup {
+    width: 20rem;
+    top: 13rem;
+    left: 5rem;
+  }
+  .stay-in-touch-message p:first-child {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+  .modal {
+    width: 50%;
+  }
+
+  .modal-close {
+    left: 4rem;
+    bottom: 1.7rem;
+  }
+
+  .footer {
+    padding: 3.75rem 6rem;
+  }
+  .grid-container {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+  .grid-x {
+    flex-flow: row;
+  }
+  .grid-margin-x {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .grid-margin-y {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .footer-links li {
+    font-size: 20px;
+    line-height: 1.5;
   }
 }

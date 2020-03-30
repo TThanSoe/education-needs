@@ -9,3 +9,11 @@ const navBar = () => {
 };
 
 navBar();
+
+function modalNewLetter() {
+  console.log("new letter");
+  document.getElementById("modal-newsletter").style.display = "block";
+}
+function modalClose() {
+  document.getElementById("modal-newsletter").style.display = "none";
+}
