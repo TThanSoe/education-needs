@@ -30,15 +30,20 @@ body {
   position: relative;
   top: -15px;
 }
-
+.nav-list {
+  padding: 0 20px 20px 20px;
+}
 .main-nav {
   list-style-type: none;
   display: none;
+  animation: zoomIn 2s alternate;
+  -webkit-animation: zoomIn 2s alternate;
 }
 
 .main-nav li a {
   text-decoration: none;
-  margin-left: 50%;
+  position: relative;
+  left: 9rem;
   font-size: 18px;
   color: #323234;
 }
@@ -61,34 +66,25 @@ body {
   position: relative;
   display: flex;
   justify-content: flex-end;
-  margin-right: 20px;
+  width: 35px;
+  margin-left: 88%;
   top: 30px;
   cursor: pointer;
   color: #323234;
   font-size: 40px;
   z-index: 1;
 }
-.navbar-toggle:after,
-.navbar-toggle:before,
-.navbar-toggle span {
-  background: #fff;
-  border-radius: 3px;
-  content: "";
-  display: block;
-  height: 5px;
-  margin: 7px 0;
-  transition: all 0.2s ease-in-out;
+@keyframes zoomIn {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.2, 1.2);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
 }
-.navbar-toggle:before {
-  transform: translateY(12px) rotate(135deg);
-}
-.navbar-toggle:after {
-  transform: translateY(12px) rotate(-135deg);
-}
-.navbar-toggle span {
-  transform: scale(0);
-}
-
 .active {
   display: block;
 }
@@ -111,7 +107,7 @@ body {
 .btn-donate {
   display: flex;
   justify-content: flex-end;
-  margin-right: 60px;
+  margin-right: 15%;
 }
 
 .search {
@@ -165,7 +161,7 @@ input {
 
 .text-mobile {
   height: 40px;
-  margin-top: -30px;
+  margin-top: -35px;
   margin-left: 90%;
 }
 
@@ -439,6 +435,10 @@ li::first-letter {
     position: relative;
     bottom: 190px;
     left: 250px;
+    animation: none;
+  }
+  .nav-list {
+    padding: 0;
   }
   .navbar-toggle {
     display: none;
