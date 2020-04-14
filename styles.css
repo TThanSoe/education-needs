@@ -434,7 +434,7 @@ li::first-letter {
     display: flex;
     position: relative;
     bottom: 190px;
-    left: 250px;
+    left: 10rem;
     animation: none;
   }
   .nav-list {
@@ -462,7 +462,8 @@ li::first-letter {
     height: 45px;
     font-size: 20px;
     font-weight: 600;
-    margin-left: 12rem;
+    margin-left: 10rem;
+    top: 1.5rem;
   }
 
   .search-mobile,
