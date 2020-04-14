@@ -462,6 +462,7 @@ li::first-letter {
     height: 45px;
     font-size: 20px;
     font-weight: 600;
+    margin-left: 12rem;
   }
 
   .search-mobile,
