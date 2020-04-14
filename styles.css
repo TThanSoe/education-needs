@@ -426,9 +426,7 @@ li::first-letter {
     position: relative;
     bottom: 15px;
   }
-  /* .logo-desktop {
-    display: none;
-  } */
+
   .main-nav {
     width: 60%;
     display: flex;
